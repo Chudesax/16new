@@ -70,7 +70,7 @@ html {
   font-style: normal;
 }
 .container {
-  max-width: 766px;
+  max-width: 320px;
   display: block;
   margin: 0 auto;
 }
@@ -155,6 +155,8 @@ main {
   display: flex;
   justify-content: space-between;
   overflow: scroll;
+  overflow-y: hidden;
+  scrollbar-width: none;
   margin: 0 16px;
   gap: 10px;
 }
@@ -171,7 +173,7 @@ main {
   height: 40px;
   color: #7e7e82;
 }
-.services__item:hover, .services__item:focus-within {
+.services__item:hover, .services__item:focus {
   border: 2px solid #b8ffec;
   border-radius: 6px;
 }
@@ -196,7 +198,7 @@ main {
   padding-left: 16px;
 }
 .about__read-more {
-  font-size: 14px;
+  font-size: 13px;
   line-height: 18px;
   letter-spacing: 0.2px;
   color: #1b1c21;
@@ -205,6 +207,12 @@ main {
   background: #f8f8f8;
   margin: 16px 0 0 48px;
   position: relative;
+  cursor: pointer;
+  min-height: 24px;
+}
+.about__read-more:hover {
+  background-color: rgba(184, 255, 236, 0.3);
+  border-radius: 10px;
 }
 .about__read-more:before {
   position: absolute;
@@ -212,6 +220,7 @@ main {
   width: 10px;
   height: 13px;
   left: -25px;
+  top: 5px;
   background: url("../icons/icon.svg") center center/cover no-repeat;
 }
 .about__photo {
