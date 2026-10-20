@@ -220,6 +220,15 @@ main {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 0;
+      border: none;
+      background: transparent;
+      font: inherit;
+      cursor: pointer;
+
+      &:hover .services__btn {
+        background-color: rgb(157, 41, 112);
+      }
     }
 
     &__descr {
@@ -287,8 +296,9 @@ main {
     white-space: preserve nowrap;
     &:hover,
     &:focus {
-      border: 2px solid #b8ffec;
-      border-radius: 6px;
+      outline: 2px solid #b8ffec;
+      outline-offset: -2px;
+      border-radius: 8px;
     }
   }
 
@@ -332,71 +342,71 @@ main {
   &__box-left {
     padding-top: 14px;
   }
-}
 
-&__text {
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: 0.2px;
-  color: #1b1c21;
-  padding-left: 16px;
-  font-weight: 500;
-}
-
-&__text-2 {
-  display: none;
-  span {
-    display: none;
-    @media (min-width: 1024px) {
-      display: inline;
-    }
-  }
-}
-@media (min-width: 768px) {
-  &__text-2 {
-    display: block;
+  &__text {
     font-size: 14px;
     line-height: 18px;
     letter-spacing: 0.2px;
     color: #1b1c21;
     padding-left: 16px;
     font-weight: 500;
-    margin-top: 26px;
   }
-}
-&__read-more {
-  font-size: 13px;
-  line-height: 18px;
-  letter-spacing: 0.2px;
-  color: #1b1c21;
-  font-weight: 500;
-  border: none;
-  background: #f8f8f8;
-  margin: 16px 0 0 48px;
-  position: relative;
-  cursor: pointer;
-  min-height: 24px;
-  &:hover {
-    background-color: rgba($color: #b8ffec, $alpha: 0.3);
-    border-radius: 10px;
-  }
-  &:before {
-    position: absolute;
-    content: "";
-    width: 10px;
-    height: 13px;
-    left: -25px;
-    top: 5px;
-    background: url("../icons/icon.svg") center center / cover no-repeat;
-  }
-}
 
-&__photo {
-  margin-top: 16px;
-  width: clamp(320px, 100%, 360px);
-  min-height: min(176px, 208px);
+  &__text-2 {
+    display: none;
+    span {
+      display: none;
+      @media (min-width: 1024px) {
+        display: inline;
+      }
+    }
+  }
   @media (min-width: 768px) {
-    min-height: min(208px, 307px);
-    width: clamp(360px, 100%, 530px);
+    &__text-2 {
+      display: block;
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 0.2px;
+      color: #1b1c21;
+      padding-left: 16px;
+      font-weight: 500;
+      margin-top: 26px;
+    }
+  }
+  &__read-more {
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    color: #1b1c21;
+    font-weight: 500;
+    border: none;
+    background: #f8f8f8;
+    margin: 16px 0 0 48px;
+    position: relative;
+    cursor: pointer;
+    min-height: 24px;
+    &:hover {
+      background-color: rgba($color: #b8ffec, $alpha: 0.3);
+      border-radius: 10px;
+    }
+    &:before {
+      position: absolute;
+      content: "";
+      width: 10px;
+      height: 13px;
+      left: -25px;
+      top: 5px;
+      background: url("../icons/icon.svg") center center / cover no-repeat;
+    }
+  }
+
+  &__photo {
+    margin-top: 16px;
+    width: clamp(320px, 100%, 360px);
+    min-height: min(176px, 208px);
+    @media (min-width: 768px) {
+      min-height: min(208px, 307px);
+      width: clamp(360px, 100%, 530px);
+    }
   }
 }
