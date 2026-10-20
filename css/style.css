@@ -69,12 +69,6 @@ html {
   font-weight: normal;
   font-style: normal;
 }
-.container {
-  max-width: 320px;
-  display: block;
-  margin: 0 auto;
-}
-
 .btn {
   background: rgb(255, 61, 119);
   border-radius: 50%;
@@ -105,6 +99,30 @@ html {
   justify-content: space-between;
   align-items: center;
   gap: 15px;
+}
+.header__phone, .header__info, .header__person {
+  display: none;
+}
+@media (min-width: 768px) {
+  .header__phone, .header__info, .header__person {
+    display: flex;
+  }
+  .header__person {
+    margin-right: 20px;
+  }
+  .header__burger {
+    margin-right: 42px;
+    position: relative;
+  }
+  .header__burger::after {
+    content: "";
+    position: absolute;
+    right: -30px;
+    width: 2px;
+    height: 32px;
+    background-color: rgb(234, 234, 234);
+    border-radius: 1px;
+  }
 }
 .header__logo {
   width: 95px;
@@ -158,20 +176,19 @@ main {
   overflow-y: hidden;
   scrollbar-width: none;
   margin: 0 16px;
-  gap: 10px;
+  gap: 20px;
 }
 .services__item {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 24px;
   font-size: 16px;
   line-height: 24px;
   letter-spacing: -0.2px;
-  padding: 8px 0;
-  min-width: 75%;
+  padding: 8px;
   height: 40px;
   color: #7e7e82;
+  white-space: preserve nowrap;
 }
 .services__item:hover, .services__item:focus {
   border: 2px solid #b8ffec;
@@ -190,12 +207,37 @@ main {
 .about {
   padding: 24px 0 35px;
 }
+@media (min-width: 768px) {
+  .about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .about__box-left {
+    width: 50%;
+  }
+}
 .about__text {
   font-size: 14px;
   line-height: 18px;
   letter-spacing: 0.2px;
   color: #1b1c21;
   padding-left: 16px;
+}
+.about__text-2 {
+  display: none;
+}
+@media (min-width: 768px) {
+  .about__text-2 {
+    display: block;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    color: #1b1c21;
+    padding-left: 16px;
+    margin-top: 26px;
+  }
 }
 .about__read-more {
   font-size: 13px;
@@ -225,4 +267,5 @@ main {
 }
 .about__photo {
   margin-top: 16px;
+  width: clamp(320px, 100%, 360px);
 }/*# sourceMappingURL=style.css.map */

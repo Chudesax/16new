@@ -89,10 +89,7 @@ html {
   font-style: normal;
 }
 
-.container {
-  max-width: 320px;
-  display: block;
-  margin: 0 auto;
+@media (min-width: 768px) {
 }
 
 .btn {
@@ -118,7 +115,6 @@ html {
   &__wrapper {
     display: flex;
     justify-content: space-between;
-
     gap: 15px;
   }
 
@@ -128,6 +124,38 @@ html {
     justify-content: space-between;
     align-items: center;
     gap: 15px;
+  }
+
+  &__phone,
+  &__info,
+  &__person {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    &__phone,
+    &__info,
+    &__person {
+      display: flex;
+    }
+
+    &__person {
+      margin-right: 20px;
+    }
+
+    &__burger {
+      margin-right: 42px;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        right: -30px;
+        width: 2px;
+        height: 32px;
+        background-color: rgba(234, 234, 234, 1);
+        border-radius: 1px;
+      }
+    }
   }
 
   &__logo {
@@ -185,21 +213,20 @@ main {
     overflow-y: hidden;
     scrollbar-width: none;
     margin: 0 16px;
-    gap: 10px;
+    gap: 20px;
   }
 
   &__item {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 24px;
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.2px;
-    padding: 8px 0;
-    min-width: 75%;
+    padding: 8px;
     height: 40px;
     color: #7e7e82;
+    white-space: preserve nowrap;
     &:hover,
     &:focus {
       border: 2px solid #b8ffec;
@@ -220,6 +247,20 @@ main {
 
 .about {
   padding: 24px 0 35px;
+
+  @media (min-width: 768px) {
+    & {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+
+    &__box-left {
+      width: 50%;
+    }
+  }
+
   &__text {
     font-size: 14px;
     line-height: 18px;
@@ -228,6 +269,20 @@ main {
     padding-left: 16px;
   }
 
+  &__text-2 {
+    display: none;
+  }
+  @media (min-width: 768px) {
+    &__text-2 {
+      display: block;
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 0.2px;
+      color: #1b1c21;
+      padding-left: 16px;
+      margin-top: 26px;
+    }
+  }
   &__read-more {
     font-size: 13px;
     line-height: 18px;
@@ -257,5 +312,6 @@ main {
 
   &__photo {
     margin-top: 16px;
+    width: clamp(320px, 100%, 360px);
   }
 }
