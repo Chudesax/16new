@@ -57,51 +57,72 @@
     </header>
 
     <main>
-      <section class="services">
-        <h1 class="services__title">Услуги и Сервисы</h1>
-        <ul class="services__list">
-          <li class="services__item">
-            <a class="services__link" href="#">Ремонтируемые бренды</a>
-          </li>
-          <li class="services__item">
-            <a class="services__link" href="#">Дополнительные услуги</a>
-          </li>
-          <li class="services__item">
-            <a class="services__link" href="#">Цены на услуги</a>
-          </li>
-          <li class="services__item">
-            <a class="services__link" href="#">Адреса сервисных центров</a>
-          </li>
-          <li class="services__item">
-            <a class="services__link" href="#">Специальные цены</a>
-          </li>
-          <li class="services__item">
-            <a class="services__link" href="#">Отзывы</a>
-          </li>
-        </ul>
-      </section>
+      <div class="container">
+        <section class="services">
+          <div class="services__box-pc">
+            <h1 class="services__title">Услуги и Сервисы</h1>
+            <div class="services__card-tools">
+              <div class="services__descr">Оставить Заявку</div>
+              <button class="btn services__btn">
+                <img src="icons/tools.svg" alt="" />
+              </button>
+            </div>
+            <div class="services__card-status">
+              <div class="services__descr">Статус ремонта</div>
+              <button class="btn services__btn">
+                <img src="icons/search.svg" alt="" />
+              </button>
+            </div>
+          </div>
+          <ul class="services__list">
+            <li class="services__item">
+              <a class="services__link" href="#">Ремонтируемые бренды</a>
+            </li>
+            <li class="services__item">
+              <a class="services__link" href="#">Дополнительные услуги</a>
+            </li>
+            <li class="services__item">
+              <a class="services__link" href="#">Цены на услуги</a>
+            </li>
+            <li class="services__item">
+              <a class="services__link" href="#">Адреса сервисных центров</a>
+            </li>
+            <li class="services__item">
+              <a class="services__link" href="#">Специальные цены</a>
+            </li>
+            <li class="services__item">
+              <a class="services__link" href="#">Отзывы</a>
+            </li>
+          </ul>
+        </section>
 
-      <section class="about">
-        <div class="about__box-left">
-          <p class="about__text">
-            Мы являемся авторизованным сервисным центром по ремонту техники
-            Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с
-            официальной гарантией производителя.
-          </p>
-          <p class="about__text-2">
-            Мы успешно работаем с 1992 года и заслужили репутацию надежного
-            партнера
-          </p>
-          <button class="about__read-more">Читать далее</button>
-        </div>
-        <div class="about__box-right">
-          <img
-            src="img/main_cps_img.jpg"
-            alt="Фотка нашего сервиса, лампово"
-            class="about__photo"
-          />
-        </div>
-      </section>
+        <section class="about">
+          <div class="about__box-left">
+            <p class="about__text">
+              Мы являемся авторизованным сервисным центром по ремонту техники
+              Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с
+              официальной гарантией производителя.
+            </p>
+            <p class="about__text-2">
+              Мы успешно работаем с 1992 года и заслужили репутацию надежного
+              партнера<span class="about__text-2--pc"
+                >, что подтверждает большое количество постоянных клиентов. Мы
+                гордимся тем, что к нам обращаются по рекомендациям и, в свою
+                очередь, советуют нас родным и близким.</span
+              >
+            </p>
+
+            <button class="about__read-more">Читать далее</button>
+          </div>
+          <div class="about__box-right">
+            <img
+              src="img/main_cps_img.jpg"
+              alt="Фотка нашего сервиса, лампово"
+              class="about__photo"
+            />
+          </div>
+        </section>
+      </div>
     </main>
   </body>
 </html>
