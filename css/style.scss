@@ -251,13 +251,19 @@ main {
   @media (min-width: 768px) {
     & {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      gap: 20px;
+      gap: 48px;
     }
 
     &__box-left {
       width: 50%;
+    }
+    &__box-right {
+      width: 50%;
+      img {
+        height: 208px;
+      }
     }
   }
 

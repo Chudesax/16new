@@ -210,12 +210,18 @@ main {
 @media (min-width: 768px) {
   .about {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    gap: 48px;
   }
   .about__box-left {
     width: 50%;
+  }
+  .about__box-right {
+    width: 50%;
+  }
+  .about__box-right img {
+    height: 208px;
   }
 }
 .about__text {
