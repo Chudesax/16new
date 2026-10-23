@@ -95,7 +95,7 @@ html {
   max-width: 1120px;
 }
 
-.btn {
+.pink_round {
   background: rgb(255, 61, 119);
   border-radius: 50%;
   width: 40px;
@@ -104,9 +104,8 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
-  &:hover {
-    background-color: rgb(157, 41, 112);
+  &:active {
+    background-color: rgb(46, 182, 80);
   }
 }
 
@@ -126,6 +125,9 @@ html {
 
   &__left-btns-wrapper,
   &__right-btns-wrapper {
+    * {
+      cursor: pointer;
+    }
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -184,19 +186,34 @@ html {
   }
 }
 main {
-  background: #f8f8f8;
+  // background: #f8f8f8;
 }
 
 .services {
-  padding-top: 24px;
+  padding: 16px;
+  padding-bottom: 0;
+  background: #f8f8f8;
+  @media (min-width: 1024px) {
+    & {
+      padding: 24px;
+      padding-bottom: 0;
+    }
+  }
 
   &__card-tools,
   &__card-status {
     display: none;
   }
 
+  &__button-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   @media (min-width: 1024px) {
-    padding: 42px 25px 49px 0;
+    padding: 42px 24px;
+    padding-bottom: 0;
   }
 
   @media (min-width: 1024px) {
@@ -226,7 +243,7 @@ main {
       font: inherit;
       cursor: pointer;
 
-      &:hover .services__btn {
+      &:active .services__btn {
         background-color: rgb(157, 41, 112);
       }
     }
@@ -249,7 +266,6 @@ main {
     line-height: 40px;
     letter-spacing: -0.6px;
     color: #1b1c21;
-    padding-left: 12px;
     &::before {
       content: "";
       position: absolute;
@@ -258,7 +274,7 @@ main {
       background-color: #41f6d7;
       border-bottom-right-radius: 20px;
       border-top-right-radius: 20px;
-      left: 0px;
+      left: -23px;
     }
   }
 
@@ -270,8 +286,7 @@ main {
     overflow: scroll;
     overflow-y: hidden;
     scrollbar-width: none;
-    margin: 0 16px;
-    gap: 20px;
+    column-gap: 20px;
 
     @media (min-width: 1024px) {
       flex-wrap: wrap;
@@ -294,11 +309,12 @@ main {
     height: 40px;
     color: #7e7e82;
     white-space: preserve nowrap;
-    &:hover,
+    &:active,
     &:focus {
       outline: 2px solid #b8ffec;
       outline-offset: -2px;
       border-radius: 8px;
+      background-color: #fff;
     }
   }
 
@@ -315,7 +331,9 @@ main {
 }
 
 .about {
-  padding: 24px 0 35px;
+  padding-top: 24px;
+  background: #f8f8f8;
+
   @media (min-width: 1024px) {
     padding-top: 14px;
   }
@@ -325,7 +343,9 @@ main {
       display: flex;
       justify-content: space-between;
       align-items: start;
-      gap: 48px;
+      column-gap: 48px;
+
+      padding: 32px 24px 16px;
     }
 
     &__box-left {
@@ -333,14 +353,7 @@ main {
     }
     &__box-right {
       width: 50%;
-      /*   img {
-        height: 208px;
-      } */
     }
-  }
-
-  &__box-left {
-    padding-top: 14px;
   }
 
   &__text {
@@ -348,31 +361,27 @@ main {
     line-height: 18px;
     letter-spacing: 0.2px;
     color: #1b1c21;
-    padding-left: 16px;
+    padding: 0 16px;
     font-weight: 500;
   }
 
   &__text-2 {
     display: none;
-    span {
-      display: none;
-      @media (min-width: 1024px) {
-        display: inline;
-      }
-    }
   }
   @media (min-width: 768px) {
     &__text-2 {
+      overflow: hidden;
       display: block;
       font-size: 14px;
       line-height: 18px;
       letter-spacing: 0.2px;
       color: #1b1c21;
-      padding-left: 16px;
       font-weight: 500;
-      margin-top: 26px;
+      padding: 24px 16px 0;
+      max-height: 60px;
     }
   }
+
   &__read-more {
     font-size: 13px;
     line-height: 18px;
@@ -394,19 +403,27 @@ main {
       content: "";
       width: 10px;
       height: 13px;
-      left: -25px;
+      left: -27px;
       top: 5px;
       background: url("../icons/icon.svg") center center / cover no-repeat;
     }
   }
 
+  @media (min-width: 1024px) {
+    &__text-2 {
+      min-height: 110px;
+    }
+  }
+
   &__photo {
-    margin-top: 16px;
-    width: clamp(320px, 100%, 360px);
-    min-height: min(176px, 208px);
+    display: block;
+    padding-top: 16px;
+    width: 100%;
+    object-fit: contain;
+    // max-height: 178px;
+
     @media (min-width: 768px) {
-      min-height: min(208px, 307px);
-      width: clamp(360px, 100%, 530px);
+      padding-top: 0;
     }
   }
 }
